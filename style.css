@@ -25,7 +25,6 @@ html {
     scroll-behavior: smooth;
 }
 
-
 .header {
     position: fixed;
     top: 0;
@@ -78,8 +77,6 @@ section {
 .section-title span {
     color: var(--main-color);
 }
-
-
 
 
 .show-animate .home-content,
@@ -153,7 +150,6 @@ section {
 
 .about {
     background-color: var(--second-bg-color);
-    
 }
 
 .about-text {
@@ -210,7 +206,13 @@ section {
 .skills-list a {
     color: #f0f0f0;
     text-decoration: none;
-    
+}
+
+.separator-rose {
+    border: none;
+    border-top: 2px solid #e5097f;
+    width: 100%;
+    margin: 12px 0;
 }
 
 .skills-list li {
@@ -228,7 +230,6 @@ section {
     background-color: var(--bg-color);
     color: var(--text-color);
 }
-
 
 .projects{
 padding:60px 10%;
@@ -292,39 +293,241 @@ background:#3a3a3a;
 }
 
 
-.stages{
-padding:60px 10%;
-background:rgb(3, 3, 3);
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      min-height: 100vh;
+    }
 
-.stages-container{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
-}
+    nav {
+      background-color: #1a1a1a;
+      padding: 1.2rem 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #2a2a2a;
+    }
 
-.stage-card{
-background:#4d4b4b;
-padding:25px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
+    nav .logo { font-size: 1.4rem; font-weight: 700; }
 
-.stage-card ul{
-margin-top:10px;
-margin-bottom:10px;
-}
+    nav ul {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
 
-.periode{
-font-weight:bold;
-color:var(--main-color);
-}
+    nav ul li a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
 
-.tech{
-font-size:14px;
-color:#fefcfc;
-}
+    nav ul li a:hover { color: #fff; }
+    nav ul li a.active { color: #e91e8c; }
+
+    /* ── SECTION STAGE ── */
+    .stage-section {
+      padding: 5rem 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-heading h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    .section-heading h2 span { color: #e91e8c; }
+
+    .section-heading p {
+      color: #888;
+      margin-top: 0.6rem;
+      font-size: 0.95rem;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .cards-grid { grid-template-columns: 1fr; }
+      nav { padding: 1rem 1.5rem; }
+      nav ul { display: none; }
+      .stage-section { padding: 3rem 1.5rem; }
+    }
+
+    .stage-card {
+      background: #1c1c1c;
+      border: 1px solid #2d2d2d;
+      border-radius: 14px;
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: transform 0.2s, border-color 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stage-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #e91e8c, #ff6bba);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .stage-card:hover {
+      transform: translateY(-4px);
+      border-color: #e91e8c44;
+    }
+
+    .stage-card:hover::before { opacity: 1; }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      background: #e91e8c20;
+      border: 1px solid #e91e8c40;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .duree-badge {
+      background: #e91e8c;
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .card-title span { color: #e91e8c; }
+
+    .card-company {
+      color: #888;
+      font-size: 0.85rem;
+    }
+
+    .card-desc {
+      color: #bbb;
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+    /* ── BOUTON VOIR PLUS (par carte) ── */
+    .card-footer {
+      margin-top: auto;
+      padding-top: 1rem;
+      border-top: 1px solid #2a2a2a;
+    }
+
+    .btn-card-detail {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: #e91e8c;
+      border: 1.5px solid #e91e8c55;
+      border-radius: 8px;
+      padding: 0.6rem 1.3rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.25s;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .btn-card-detail::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, #e91e8c, #ff6bba);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+      z-index: 0;
+    }
+
+    .btn-card-detail:hover::before { transform: scaleX(1); }
+    .btn-card-detail:hover {
+      color: #fff;
+      border-color: transparent;
+    }
+
+    .btn-card-detail span,
+    .btn-card-detail svg {
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-voir-plus {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      color: #fff;
+      border: 1.5px solid #e91e8c;
+      border-radius: 8px;
+      padding: 0.85rem 2.2rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-voir-plus::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: #e91e8c;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+      z-index: 0;
+    }
+
+    .btn-voir-plus:hover::before { transform: scaleX(1); }
+    .btn-voir-plus:hover { color: #fff; }
+
+    .btn-voir-plus span, .btn-voir-plus svg {
+      position: relative;
+      z-index: 1;
+    }
 
 .veille {
     text-align: center;
@@ -333,10 +536,8 @@ color:#fefcfc;
 .card {
     max-width: 600px;
     margin: 2rem auto;
-    
     border-radius: 10px;
     overflow: hidden;
-    
 }
 
 .card img {

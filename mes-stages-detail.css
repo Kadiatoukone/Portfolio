@@ -1,0 +1,284 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      min-height: 100vh;
+    }
+
+    nav {
+      background-color: #1a1a1a;
+      padding: 1.2rem 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #2a2a2a;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    nav ul li a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    nav ul li a:hover { color: #fff; }
+    nav ul li a.active { color: #e91e8c; }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #e91e8c;
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid #e91e8c33;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+
+    .back-btn:hover {
+      background: #e91e8c15;
+      border-color: #e91e8c;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem 2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+    }
+
+    .hero h1 span { color: #e91e8c; }
+
+    .hero p {
+      color: #aaa;
+      margin-top: 0.8rem;
+      font-size: 1rem;
+    }
+
+    .stages-container {
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 0 2rem 5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+    }
+
+    .stage-card {
+      background: #1c1c1c;
+      border: 1px solid #2d2d2d;
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+
+    .stage-card:hover { transform: translateY(-3px); }
+
+    .stage-header {
+      background: linear-gradient(135deg, #1e1e1e, #242424);
+      border-bottom: 1px solid #2d2d2d;
+      padding: 2rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .stage-header-left h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .stage-header-left h2 span { color: #e91e8c; }
+
+    .stage-header-left .company {
+      color: #aaa;
+      font-size: 0.9rem;
+      margin-top: 0.3rem;
+    }
+
+    .stage-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 1rem;
+    }
+
+    .badge {
+      background: #2a2a2a;
+      color: #ccc;
+      font-size: 0.78rem;
+      padding: 4px 12px;
+      border-radius: 20px;
+      border: 1px solid #3a3a3a;
+    }
+
+    .badge.pink {
+      background: #e91e8c20;
+      color: #e91e8c;
+      border-color: #e91e8c40;
+    }
+
+    .stage-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .stage-meta .duree {
+      background: #e91e8c;
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+    }
+
+    .stage-meta .annee {
+      color: #666;
+      font-size: 0.82rem;
+    }
+
+    .stage-body {
+      padding: 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+
+    @media (max-width: 700px) {
+      .stage-body { grid-template-columns: 1fr; }
+      .stage-header { flex-direction: column; }
+      .stage-meta { align-items: flex-start; }
+      nav { padding: 1rem 1.5rem; }
+      nav ul { display: none; }
+    }
+
+    .section-title {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #e91e8c;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .desc p {
+      color: #bbb;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .missions ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .missions ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #ccc;
+      font-size: 0.93rem;
+    }
+
+    .missions ul li::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #e91e8c;
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    .competences {
+      grid-column: 1 / -1;
+    }
+
+    .comp-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .comp-item {
+      background: #252525;
+      border: 1px solid #333;
+      border-radius: 10px;
+      padding: 10px 16px;
+      font-size: 0.85rem;
+      color: #ddd;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: border-color 0.2s;
+    }
+
+    .comp-item:hover { border-color: #e91e8c55; }
+
+    .comp-item .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #e91e8c;
+      flex-shrink: 0;
+    }
+
+    .stage-footer {
+      border-top: 1px solid #2d2d2d;
+      padding: 1.2rem 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .stage-footer span {
+      color: #666;
+      font-size: 0.82rem;
+    }
+
+    .tech-tag {
+      background: #1a1a2e;
+      color: #7b8cde;
+      font-size: 0.78rem;
+      padding: 3px 10px;
+      border-radius: 4px;
+      border: 1px solid #2a2a4a;
+    }
+
+    .divider {
+      text-align: center;
+      color: #333;
+      font-size: 1.5rem;
+      margin: -1rem 0;
+    }
